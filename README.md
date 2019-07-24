@@ -3,7 +3,10 @@
 #### 项目介绍
 基于bootstrap的cron表达式选择器的jQuery插件，提供按年，按月，按周，按小时，按天，按分钟周期触发的选择策略。
 
-![界面示例](https://images.gitee.com/uploads/images/2018/0831/132734_b9e0fa2c_1644072.png "界面示例")
+![界面示例](https://raw.githubusercontent.com/wiki/zhanghuang03/cron-selector-master/images/menu.saveimg.savepath20190724183559.jpg "界面示例")
+
+![界面示例](https://raw.githubusercontent.com/wiki/zhanghuang03/cron-selector-master/images/menu.saveimg.savepath20190724183628.jpg "界面示例")
+
 
 #### 使用示例
 
