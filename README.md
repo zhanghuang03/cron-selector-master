@@ -33,23 +33,27 @@
     <title></title>
 </head>
     <body>
-        
-        <div class="container" style="margin-top:30px;text-align:center;">
-            <div>
-                <label>Cron表达式选择器</label><br><br>
-            </div>
-            <form class="form-inline">
-                <div class="form-group">
-                    <input id="cronDemo" name="cronDemo" class="form-control" />
-                </div>
-            </form>
-        </div>
+		
+		<div class="container" style="margin-top:30px;text-align:center;">
+			<div>
+				<label>Cron表达式选择器</label><br><br>
+			</div>
+			<form class="form-inline">
+				<div class="form-group">
+					<input name="jobCron1" class="form-control" />
+				</div>
+				<div class="form-group">
+					<input name="jobCron2" class="form-control" />
+				</div>
+			</form>
+		</div> 
     
     <script>
             $(function () {
-                $("#cronDemo").cronSelector();                
+                 $("[name='jobCron1']").cronSelector("jobCron1");
+				 $("[name='jobCron2']").cronSelector("jobCron2");
             });
-    </script>
+	</script>
         
     </body>
 </html>
