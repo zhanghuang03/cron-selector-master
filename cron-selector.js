@@ -3,14 +3,12 @@
 
 (function ($) {
 
-    var var_r;    
+
 
     $.fn.extend({
 
 
-        cronSelector: function (obj) {
-
-            var rand = obj;
+        cronSelector: function (rand,elementAttrName,elementAttrValue) {
 
             window["resultsName"+rand]="";
             window["inputElement"+rand];
@@ -174,9 +172,9 @@
             $(yearlyTab).appendTo(tabContent);
             $(tabContent).appendTo(span12);
 
-            //creating the button and results input           
-            window["resultsName"+obj] = $(this).prop("id");
-            $(this).prop("name", window["resultsName"+obj]);
+            //creating the button and results input
+            window["resultsName"+rand] = $(this).prop("id");
+            $(this).prop("name", window["resultsName"+rand]);
 
             $(span12).appendTo(row);
             $(row).appendTo(container);
@@ -199,7 +197,7 @@
             // Replace the input with an input group
             var $g = $("<div>").addClass("input-group");
             // Add an input
-            var $i = $("<input>", { type: 'text', placeholder: '', readonly: 'readonly' }).addClass("form-control").val($(that).val());
+            var $i = $("<input>", { type: 'text', placeholder: '', readonly: 'readonly' ,name:elementAttrName}).addClass("form-control").val(elementAttrValue);
             $i.appendTo($g);
             // Add the edit button
             var $b = $("<span class='input-group-addon' style='cursor:pointer;'><i class='glyphicon glyphicon-edit'></i><span>");
@@ -316,10 +314,9 @@
         return "<option id='" + i + "'>" + displayTimeUnit(i) + "</option>";
     };
 
-    var generate = function (obj) {
+    var generate = function (rand) {
 
-        var rand = obj;
-        
+         
         var activeTab = $("ul#CronGenTabs"+rand+" li.active a").prop("id");
         var results = "";
         switch (activeTab) {
@@ -381,7 +378,7 @@
         }
      
         // Update original control
-        console.log(window["displayElement"+rand]);
+
         window["inputElement"+rand].val(results).change();
         // Update display
         window["displayElement"+rand].val(results);

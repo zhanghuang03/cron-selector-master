@@ -23,17 +23,17 @@ github link: https://github.com/mengweijin/cron-selector
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    
-    <script src="cron-selector.js"></script>
-    
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<script src="cron-selector.js"></script>
+	
     <title></title>
 </head>
     <body>
@@ -44,18 +44,18 @@ github link: https://github.com/mengweijin/cron-selector
 			</div>
 			<form class="form-inline">
 				<div class="form-group">
-					<input name="jobCron1" class="form-control" />
+					<input id="jobCron1" name="jc1_jobCron" class="form-control" />
 				</div>
 				<div class="form-group">
-					<input name="jobCron2" class="form-control" />
+					<input id="jobCron3" name="jc2_jobCron" class="form-control" />
 				</div>
 			</form>
 		</div> 
     
     <script>
             $(function () {
-                 $("[name='jobCron1']").cronSelector("jobCron1");
-				 $("[name='jobCron2']").cronSelector("jobCron2");
+                $("#jobCron1").cronSelector(new Date().getTime(),$("#jobCron1").attr("name"));
+				$("#jobCron3").cronSelector(new Date().getTime(),$("#jobCron3").attr("name"),"0 0 0 1 1/1 ? *");
             });
 	</script>
         

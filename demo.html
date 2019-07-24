@@ -24,18 +24,18 @@
 			</div>
 			<form class="form-inline">
 				<div class="form-group">
-					<input name="jobCron1" class="form-control" />
+					<input id="jobCron1" name="jc1_jobCron" class="form-control" />
 				</div>
 				<div class="form-group">
-					<input name="jobCron2" class="form-control" />
+					<input id="jobCron3" name="jc2_jobCron" class="form-control" />
 				</div>
 			</form>
 		</div> 
     
     <script>
             $(function () {
-                 $("[name='jobCron1']").cronSelector("jobCron1");
-				 $("[name='jobCron2']").cronSelector("jobCron2");
+                $("#jobCron1").cronSelector(new Date().getTime(),$("#jobCron1").attr("name"));
+				$("#jobCron3").cronSelector(new Date().getTime(),$("#jobCron3").attr("name"),"0 0 0 1 1/1 ? *");
             });
 	</script>
         
